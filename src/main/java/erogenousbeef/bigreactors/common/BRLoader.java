@@ -21,13 +21,14 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import erogenousbeef.bigreactors.Tags;
 import erogenousbeef.bigreactors.common.data.StandardReactants;
 import erogenousbeef.core.multiblock.MultiblockEventHandler;
 
 @Mod(
     modid = BRLoader.MOD_ID,
     name = BigReactors.NAME,
-    version = BRConfig.VERSION,
+    version = Tags.VERSION,
     acceptedMinecraftVersions = BRConfig.MINECRAFT_VERSION,
     dependencies = BRLoader.DEPENDENCIES)
 public class BRLoader {
