@@ -2,6 +2,7 @@ package erogenousbeef.bigreactors.utils.intermod;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+
 import cpw.mods.fml.common.event.FMLInterModComms;
 
 /**
@@ -14,40 +15,42 @@ import cpw.mods.fml.common.event.FMLInterModComms;
  */
 public class IMCHelper {
 
-	protected static void sendInterModMessage(String to, String type, NBTTagCompound message) {
-		FMLInterModComms.sendMessage(to, type, message);
-	}
-	
-	/// MineFactory Reloaded
-	public static class MFR {
-		public static void addOreToMiningLaserFocus(ItemStack stack, int color) {
-	        NBTTagCompound laserOreMsg = new NBTTagCompound();
-	        stack.writeToNBT(laserOreMsg);
-	        laserOreMsg.setInteger("value", color);
-	        IMCHelper.sendInterModMessage("MineFactoryReloaded", "registerLaserOre", laserOreMsg);
+    protected static void sendInterModMessage(String to, String type, NBTTagCompound message) {
+        FMLInterModComms.sendMessage(to, type, message);
+    }
 
-		}
-		
-		public static void setMiningLaserFocusPreferredOre(ItemStack stack, int color) {
-			
-		}
-	}
-	
-	/// Applied Energistics 2
-	public static class AE2 {
-		public static void addGrinderRecipe(ItemStack input, ItemStack output, int turns) {
-			NBTTagCompound msg = new NBTTagCompound();
-			NBTTagCompound in = new NBTTagCompound();
-			NBTTagCompound out = new NBTTagCompound();
+    /// MineFactory Reloaded
+    public static class MFR {
 
-			input.writeToNBT( in );
-			output.writeToNBT( out );
+        public static void addOreToMiningLaserFocus(ItemStack stack, int color) {
+            NBTTagCompound laserOreMsg = new NBTTagCompound();
+            stack.writeToNBT(laserOreMsg);
+            laserOreMsg.setInteger("value", color);
+            IMCHelper.sendInterModMessage("MineFactoryReloaded", "registerLaserOre", laserOreMsg);
 
-			msg.setTag( "in", in );
-			msg.setTag( "out", out );
-			msg.setInteger( "turns", turns );
-			
-			sendInterModMessage("appliedenergistics2", "add-grindable", msg);
-		}
-	}		
+        }
+
+        public static void setMiningLaserFocusPreferredOre(ItemStack stack, int color) {
+
+        }
+    }
+
+    /// Applied Energistics 2
+    public static class AE2 {
+
+        public static void addGrinderRecipe(ItemStack input, ItemStack output, int turns) {
+            NBTTagCompound msg = new NBTTagCompound();
+            NBTTagCompound in = new NBTTagCompound();
+            NBTTagCompound out = new NBTTagCompound();
+
+            input.writeToNBT(in);
+            output.writeToNBT(out);
+
+            msg.setTag("in", in);
+            msg.setTag("out", out);
+            msg.setInteger("turns", turns);
+
+            sendInterModMessage("appliedenergistics2", "add-grindable", msg);
+        }
+    }
 }

@@ -1,18 +1,21 @@
-[
 {
-  "modid": "BigReactors",
-  "name": "Big Reactors",
-  "description": "Adds large, multiblock power generation machines to Minecraft. Compatible with Redstone Flux (RF) power.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "http://www.big-reactors.com",
-  "updateUrl": "",
-  "authorList": ["ErogenousBeef"],
-  "credits": "powercrystals, skyboy, King_Lemming, & Calclavia for example code",
-  "logoFile": "",
-  "screenshots": [],
-  "dependencies": [
-	"MinecraftForge", "CoFHCore"
-  ]
+	"modListVersion": 2,
+	"modList": [{
+		"modid": "${modId}",
+		"name": "${modName}",
+		"description": "Adds large, multiblock power generation machines to Minecraft. Compatible with Redstone Flux (RF) power.",
+		"version": "${modVersion}",
+		"mcversion": "${minecraftVersion}",
+		"url": "https://github.com/LITW-Refined-New-Stories/MyMod",
+		"updateUrl": "",
+		"authorList": ["Pilzinsel64", "ErogenousBeef"],
+		"credits": "powercrystals, skyboy, King_Lemming, & Calclavia for example code",
+		"logoFile": "",
+		"screenshots": [],
+		"parent": "",
+		"requiredMods": [],
+		"dependencies": [],
+		"dependants": [],
+		"useDependencyInformation": false
+	}]
 }
-]
